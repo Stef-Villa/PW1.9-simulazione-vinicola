@@ -1,0 +1,239 @@
+body {
+  background-color: #FDF6E3;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #6A1B1A;
+}
+
+/* Titolo principale */
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #6A1B1A;
+  margin-bottom: 2rem;
+}
+
+/* Sezione */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #6A1B1A;
+  margin-bottom: 1rem;
+}
+
+/* Etichette */
+.label {
+  font-weight: bold;
+  color: #6A1B1A;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* Dropdown */
+.dropdown {
+  padding: 0.5rem;
+  border: 1px solid #B0AFAF;
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* Bottoni */
+.button {
+  background-color: #E6B800;
+  color: white;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #CFA600;
+}
+
+/* Contenitore generale */
+.page {
+  padding: 2rem;
+}
+
+/* Riga grafici */
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Grafici */
+.grafico {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Card generica */
+.card {
+  box-sizing: border-box;  
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Header card con titolo + bottone */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+/* Indicatori (es. temperatura, vento...) */
+.indicatori {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  background-color: #F0EAFC;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.col-1-3 {
+  flex: 1 1 calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
+}
+
+/* Debug zone */
+.debug {
+  margin-top: 0.5rem;
+  color: green;
+  font-size: 0.9rem;
+}
+
+.header {
+  position: relative;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Titolo centrato */
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+
+/* Menu seleziona anno tutto a destra */
+.header-anno {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: right;
+  min-width: 300px;
+}
+
+.Select-control,
+.Select-placeholder,
+.Select--single > .Select-control .Select-value {
+  text-align: left !important;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+/* ───── MEDIA QUERIES: RESPONSIVE ───── */
+@media screen and (max-width: 768px) {
+
+/* Colonne affiancate diventano impilate */
+.row {
+  flex-direction: column;
+}
+
+.col-1-3 {
+  max-width: 100%;
+  flex: 1 1 100%;
+}
+
+/* Titoli e testi più piccoli e leggibili */
+.page-title {
+  font-size: 2rem;
+}
+
+.section-title {
+  font-size: 1.2rem;
+}
+
+/* Dropdown e bottoni larghi */
+.dropdown,
+.button {
+  width: 100%;
+}
+
+/* Header mobile-friendly */
+.header {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header-anno {
+  position: static;
+  transform: none;
+  width: 100%;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+/* Indicatori ambientali scrollabili */
+.indicatori {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.indicatori > div {
+  min-width: 160px;
+}
+}
+
+.grafico > div {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/*kill switch */
+.kill-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.button-kill {
+  background-color: darkred;
+  color: white;
+  font-weight: bold;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.button-kill:hover {
+  background-color: #8B0000;
+}

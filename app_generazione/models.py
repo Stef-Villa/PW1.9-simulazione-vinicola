@@ -19,7 +19,7 @@ class Uva(Base):
         self.nome = nome
         self.resa_attesa_ettaro = resa_attesa_ettaro
         self.ettari = ettari
-        self.resa_attesa = self.resa_attesa_ettaro * self.ettari  # Calcoliamo la resa attesa
+        self.resa_attesa = self.resa_attesa_ettaro * self.ettari  # Calcolo la resa attesa
 
 class Ambiente(Base):
     __tablename__ = 'ambiente'
@@ -39,8 +39,8 @@ class Produzione(Base):
     id_uva = Column(Integer, ForeignKey('uva.id'), nullable=False)
     quantità_prodotta = Column(Integer, nullable=False)
     qualità_annata = Column(Integer, nullable=False)  # da 1 a 10
-    tipo_vino = Column(String)  # Nuovo campo per tipo di vino (Rosso, Bianco)
-    # Collegamento con la tabella CostiAnnui per l'anno
+    tipo_vino = Column(String)  
+    
     anno_costi = Column(Integer, ForeignKey('costi_annui.anno'))
 
     uva = relationship("Uva", back_populates="produzioni")
@@ -86,7 +86,7 @@ class Dipendente(Base):
 
     id = Column(Integer, primary_key=True)
     nome = Column(String, nullable=False)
-    ruolo = Column(String, nullable=False)  # Es. 'Viticoltura', 'Produzione', 'Vendite', 'Amministrazione'
+    ruolo = Column(String, nullable=False)  # Es. 'Viticoltura', 'Produzione', 'Vendite', 
     stipendio_annuo = Column(Float, nullable=False)
     anno_assunzione = Column(Integer, nullable=False)
     attivo = Column(Boolean, default=True)
